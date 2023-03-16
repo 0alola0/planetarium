@@ -1,0 +1,44 @@
+
+
+.nav-btn{
+  border-top: 4px solid;
+}
+.nav-btn:hover{
+  border-top: 4px solid;
+}
+.overlay-image{
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+  animation: myAnim 1s ease-out;
+}
+.nav-ball{
+  display: none;
+}
+.geology-overlay{
+  position: relative;
+}
+@keyframes myAnim {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.geology-image{
+  width: 163px;
+  height: auto;
+  transform: translate(-153%, 100%);
+}
+.structure-image{
+  transform: translate(-100%);
+}
+@media only screen and (max-width: 575px) {
+  .nav-btn{
+    display: flex;
+
+  }
+  .nav-ball{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+}

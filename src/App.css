@@ -1,10 +1,14 @@
 
 
-.nav-btn{
+.nav-btn-container{
   border-top: 4px solid;
 }
-.nav-btn:hover{
+.nav-btn-container:hover{
   border-top: 4px solid;
+}
+.navigation-btn{
+  border: none;
+  background-color: transparent;
 }
 .overlay-image{
   position: relative;

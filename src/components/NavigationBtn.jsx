@@ -14,9 +14,9 @@ const NavigationBtn = ({name, color}) => {
   }
 
   return (
-    <div className="nav-btn" style={overline} onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff}>
+    <div className="nav-btn-container" style={overline} onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff}>
         <div className="nav-ball" style={fill}></div>
-        <button>{name}</button>
+        <button className="navigation-btn">{name}</button>
     </div>
   );
 }

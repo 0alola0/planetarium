@@ -1,6 +1,13 @@
 .navbar-toggler{
     border: none !important;
 }
+.navbar-brand{
+    color: white !important;
+}
+.navbar{
+    padding-block: 19px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.199);
+}
 .container{
     justify-content: space-between !important;
 }

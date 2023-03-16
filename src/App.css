@@ -1,38 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap');
+
+*{
+  font-family: 'Antonio', sans-serif;
+  color: white;
+}
+:root{
+  --bg-color: #070724;
+  --header-main: 80px;
+  --stats-measured: 40px;
+  --navigation-text: 11px;
+  --information-text: 14px;
+  --meek-border: 1px solid #ffffff2f;
+}
+body, html{
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-image: url("./assets/background-stars.svg");
+  background-size: contain;
+  animation: float 10s ease-in-out infinite;
+}
+@keyframes float {
+	0% {
+		background-position: 0% 0%; 
+	}
+	50% {
+		background-position: 0% 10%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
 
 
 .nav-btn-container{
+  display: flex;
   border-top: 4px solid;
+  margin-inline: 16.5px;
 }
 .nav-btn-container:hover{
   border-top: 4px solid;
+  
 }
 .navigation-btn{
   border: none;
   background-color: transparent;
+  text-decoration: none !important;
+  font-size: var(--navigation-text);
+  opacity: 0.75;
+  letter-spacing: 1px;
 }
-.overlay-image{
-  position: relative;
-  opacity: 0;
-  z-index: 1;
-  animation: myAnim 1s ease-out;
+.navigation-btn:hover{
+  opacity: 1;
 }
+.landing-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 162px;
+}
+.landing-text-container{
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin-inline: 12.5%;
+}
+.status-btn-wrapper:nth-child(3){
+  margin-block: 16px;
+}
+.image-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.status-btn{
+  border: var(--meek-border);
+  width: 350px;
+  height: 48px;
+  text-align: start;
+}
+.button-numerator-text{
+  opacity: 0.5;
+  margin-inline: 28px;
+}
+
 .nav-ball{
   display: none;
 }
-.geology-overlay{
+.overlay-transparent-image{
+  transform: translate(100%);
+}
+.structure-underlay-image{
   position: relative;
+  opacity: 0;
+  z-index: 2;
+  animation: myAnim 1s ease-out;
 }
 @keyframes myAnim {
   from { opacity: 1; }
   to { opacity: 0; }
 }
-.geology-image{
+.structure-overlay-image{
+  transform: translate(100%);
+  z-index: 0;
+}
+
+.geology-overley{
+  position: absolute;
   width: 163px;
   height: auto;
-  transform: translate(-153%, 100%);
-}
-.structure-image{
-  transform: translate(-100%);
+  transform: rotate(45deg)  translateX(90%);
+  z-index: 3;
+} 
+
+@media only screen and (max-width: 800px) {
+  .nav-btn-container{
+    margin-inline: 10px;
+  }
+
 }
 @media only screen and (max-width: 575px) {
   .nav-btn{

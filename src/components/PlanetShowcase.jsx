@@ -46,12 +46,17 @@ const planetShowcase = () => {
 
   return (
     <div>
-      <ImageDivision planet={planet} currentStatus={currentStatus}/>
-      <TextDivision planet={planet} currentStatus={currentStatus}/>
-      <StatusBtns number={"01"} active={currentStatus.status=="overview"? true : false} bgColor={planet.color} statusBtn={"overview"} btnText={"OVERVIEW"} setBtnStatus={setBtnStatus}/>
-      <StatusBtns number={"02"} active={currentStatus.status=="structure"? true : false} bgColor={planet.color} statusBtn={"structure"} btnText={"INTERNAL STRUCTURE"} setBtnStatus={setBtnStatus}/>
-      <StatusBtns number={"03"} active={currentStatus.status=="geology"? true : false} bgColor={planet.color} statusBtn={"geology"} btnText={"SURFACE GEOLOGY"} setBtnStatus={setBtnStatus}/>
-      <StatFooter planet={planet}/>
+        <div className="landing-container">
+            <ImageDivision planet={planet} currentStatus={currentStatus}/>
+            <div className="landing-text-container">
+                <TextDivision planet={planet} currentStatus={currentStatus}/>
+                <StatusBtns number={"01"} active={currentStatus.status=="overview"? true : false} bgColor={planet.color} statusBtn={"overview"} btnText={"OVERVIEW"} setBtnStatus={setBtnStatus}/>
+                <StatusBtns number={"02"} active={currentStatus.status=="structure"? true : false} bgColor={planet.color} statusBtn={"structure"} btnText={"INTERNAL STRUCTURE"} setBtnStatus={setBtnStatus}/>
+                <StatusBtns number={"03"} active={currentStatus.status=="geology"? true : false} bgColor={planet.color} statusBtn={"geology"} btnText={"SURFACE GEOLOGY"} setBtnStatus={setBtnStatus}/>
+            </div>
+        </div>
+
+        <StatFooter planet={planet}/>
     </div>
   );
 }

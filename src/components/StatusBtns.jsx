@@ -14,8 +14,8 @@ const StatusBtns = ({number, statusBtn, btnText, bgColor, setBtnStatus, active})
 
   return (
     <div className="status-btn-wrapper" >
-        <button value={statusBtn} onClick={(e) =>setBtnStatus(e.target.value)} onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff} style={btnStyle}>
-            {number} {btnText}
+        <button className="status-btn" value={statusBtn} onClick={(e) =>setBtnStatus(e.target.value)} onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff} style={btnStyle}>
+            <span className="button-numerator-text">{number}</span> {btnText}
         </button>
     </div>
   );

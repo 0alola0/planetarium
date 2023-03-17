@@ -3,7 +3,7 @@ import FooterCard from './FooterCard';
 
 const StatFooter = ({planet}) => {
   return (
-    <div>
+    <div className="footer-container">
         <FooterCard currentHeading={"ROTATION TIME"} measuredStat={planet.rotation}/>
         <FooterCard currentHeading={"REVOLUTION TIME"} measuredStat={planet.revolution}/>
         <FooterCard currentHeading={"RADIUS"} measuredStat={planet.radius}/>

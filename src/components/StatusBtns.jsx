@@ -11,9 +11,12 @@ const StatusBtns = ({number, statusBtn, btnText, bgColor, setBtnStatus, active})
     const btnStyle = {
         backgroundColor: isHover||active? bgColor : "transparent"
     }
+    const fill = {
+        borderColor: active? bgColor : "transparent"
+    }
 
   return (
-    <div className="status-btn-wrapper" >
+    <div className="status-btn-wrapper" style={fill}>
         <button className="status-btn" value={statusBtn} onClick={(e) =>setBtnStatus(e.target.value)} onMouseEnter={handleHoverOn} onMouseLeave={handleHoverOff} style={btnStyle}>
             <span className="button-numerator-text">{number}</span> {btnText}
         </button>

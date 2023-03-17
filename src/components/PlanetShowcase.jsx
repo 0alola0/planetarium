@@ -10,7 +10,6 @@ import TextDivision from './TextDivision';
 const planetShowcase = () => {
     let {name} = useParams()
     const planet = PLANETS.find((p) => p.name == name)
-    console.log(planet)
     const [currentStatus, setCurrentStatus] = useState({
         status: "overview",
         text: planet.overview.content,
@@ -40,7 +39,6 @@ const planetShowcase = () => {
             tempSource = planet.overview.source
         }
         setCurrentStatus({...currentStatus, status: value, text: tempText, image: currentImage, source: tempSource})
-        console.log(currentStatus)
     }
     
 

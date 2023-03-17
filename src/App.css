@@ -17,7 +17,7 @@ body, html{
   min-height: 100vh;
   background-image: url("../public/assets/background-stars.svg");
   background-size: contain 110%;
-  /* animation: float 10s ease-in-out infinite; */
+  animation: float 10s ease-in-out infinite;
 }
 @keyframes float {
 	0% {

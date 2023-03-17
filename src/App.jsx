@@ -12,7 +12,7 @@ function App() {
     <>
     <NavigationButtons/>
     <Routes>
-      <Route path='/' element={ <Navigate to="/Earth"/> }/>
+      <Route path='/' element={<Navigate to="/Neptune"/>}/>
       <Route path='/:name' element={<PlanetShowcase/>}/>
     </Routes>
 

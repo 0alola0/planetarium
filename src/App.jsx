@@ -12,10 +12,9 @@ function App() {
     <>
     <NavigationButtons/>
     <Routes>
-      <Route path='/' element={<Navigate to="/Neptune"/>}/>
+      <Route path='/' element={<Navigate to="/neptune"/>}/>
       <Route path='/:name' element={<PlanetShowcase/>}/>
     </Routes>
-
     </>
 
   )

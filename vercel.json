@@ -1,0 +1,12 @@
+{
+    "routes": [
+        { "src": "/mercury", "dest": "/" },
+        { "src": "/venus", "dest": "/" },
+        { "src": "/earth", "dest": "/" },
+        { "src": "/mars", "dest": "/" },
+        { "src": "/jupiter", "dest": "/" },
+        { "src": "/saturn", "dest": "/" },
+        { "src": "/uranus", "dest": "/" },
+        { "src": "/neptune", "dest": "/" }
+    ]
+}

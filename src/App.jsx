@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import reactLogo from '../public/assets/logo.svg'
 import { Route, Routes, Link, Navigate } from 'react-router-dom'
 import './App.css'
 import './BootstrapOverride.css'

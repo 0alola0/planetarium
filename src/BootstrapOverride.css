@@ -15,7 +15,7 @@
     justify-content: space-between !important;
 }
 .navbar-toggler-icon{
-    background-image: url("./assets/icon-hamburger.svg") !important;
+    background-image: url("./public/assets/icon-hamburger.svg") !important;
 }
 .navbar-collapse{
   flex-grow: 0 !important;

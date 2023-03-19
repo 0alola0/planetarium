@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import PLANETS from '../PLANETS.json'
 import ImageDivision from './ImageDivision';
+import PageNotFound from './PageNotFound';
 import StatFooter from './StatFooter';
 import StatusBtns from './StatusBtns';
 import TextDivision from './TextDivision';
@@ -12,13 +13,13 @@ const planetShowcase = () => {
     const planet = PLANETS.find((p) => p.name == name)
     const [currentStatus, setCurrentStatus] = useState({
         status: "overview",
-        text: planet.overview.content,
-        image: planet.images.planet,
-        source: planet.overview.source,
+        text: "",
+        image: "",
+        source: "",
     })
 
     useEffect(() => {
-        setBtnStatus("overview")
+        planet? setBtnStatus("overview") : ""
     }, [planet])
 
     const setBtnStatus = (value) => {
@@ -40,31 +41,34 @@ const planetShowcase = () => {
         }
         setCurrentStatus({...currentStatus, status: value, text: tempText, image: currentImage, source: tempSource})
     }
-    
 
-  return (
-    <div>
-        <div className="top-text-btns">
-                    <StatusBtns number={"01"} active={currentStatus.status=="overview"? true : false} bgColor={planet.color} statusBtn={"overview"} btnText={"OVERVIEW"} setBtnStatus={setBtnStatus}/>
-                    <StatusBtns number={"02"} active={currentStatus.status=="structure"? true : false} bgColor={planet.color} statusBtn={"structure"} btnText={"STRUCTURE"} setBtnStatus={setBtnStatus}/>
-                    <StatusBtns number={"03"} active={currentStatus.status=="geology"? true : false} bgColor={planet.color} statusBtn={"geology"} btnText={"SURFACE"} setBtnStatus={setBtnStatus}/>
-        </div>
-        <div className="landing-container">
-            <ImageDivision planet={planet} currentStatus={currentStatus}/>
-            <div className="landing-text-container">
-                <div className="landing-text">
-                    <TextDivision planet={planet} currentStatus={currentStatus}/>
-                </div>
-                <div className="text-btns">
-                    <StatusBtns number={"01"} active={currentStatus.status=="overview"? true : false} bgColor={planet.color} statusBtn={"overview"} btnText={"OVERVIEW"} setBtnStatus={setBtnStatus}/>
-                    <StatusBtns number={"02"} active={currentStatus.status=="structure"? true : false} bgColor={planet.color} statusBtn={"structure"} btnText={"INTERNAL STRUCTURE"} setBtnStatus={setBtnStatus}/>
-                    <StatusBtns number={"03"} active={currentStatus.status=="geology"? true : false} bgColor={planet.color} statusBtn={"geology"} btnText={"SURFACE GEOLOGY"} setBtnStatus={setBtnStatus}/>
+return (
+
+    <div> 
+        {(planet? (<div>
+            <div className="top-text-btns">
+                        <StatusBtns number={"01"} active={currentStatus.status=="overview"? true : false} bgColor={planet.color} statusBtn={"overview"} btnText={"OVERVIEW"} setBtnStatus={setBtnStatus}/>
+                        <StatusBtns number={"02"} active={currentStatus.status=="structure"? true : false} bgColor={planet.color} statusBtn={"structure"} btnText={"STRUCTURE"} setBtnStatus={setBtnStatus}/>
+                        <StatusBtns number={"03"} active={currentStatus.status=="geology"? true : false} bgColor={planet.color} statusBtn={"geology"} btnText={"SURFACE"} setBtnStatus={setBtnStatus}/>
+            </div>
+            <div className="landing-container">
+                <ImageDivision planet={planet} currentStatus={currentStatus}/>
+                <div className="landing-text-container">
+                    <div className="landing-text">
+                        <TextDivision planet={planet} currentStatus={currentStatus}/>
+                    </div>
+                    <div className="text-btns">
+                        <StatusBtns number={"01"} active={currentStatus.status=="overview"? true : false} bgColor={planet.color} statusBtn={"overview"} btnText={"OVERVIEW"} setBtnStatus={setBtnStatus}/>
+                        <StatusBtns number={"02"} active={currentStatus.status=="structure"? true : false} bgColor={planet.color} statusBtn={"structure"} btnText={"INTERNAL STRUCTURE"} setBtnStatus={setBtnStatus}/>
+                        <StatusBtns number={"03"} active={currentStatus.status=="geology"? true : false} bgColor={planet.color} statusBtn={"geology"} btnText={"SURFACE GEOLOGY"} setBtnStatus={setBtnStatus}/>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <StatFooter planet={planet}/>
+            <StatFooter planet={planet}/>
+        </div>) : <PageNotFound/>)}       
     </div>
+    
+
   );
 }
 

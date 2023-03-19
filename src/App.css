@@ -15,23 +15,48 @@ body, html{
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  background-image: url("../public/assets/background-stars.svg");
-  background-size: contain 110%;
-  /* animation: float 10s ease-in-out infinite; */
+  background-image: url("/assets/background-stars.svg");
+  background-size: contain 110% 110%;
+  animation: float 15s linear infinite;
 }
 @keyframes float {
 	0% {
 		background-position: 0% 0%; 
 	}
-	50% {
-		background-position: 0% 10%;
+  25% {
+		background-position: 5% -5%;
 	}
-	100% {
+	50% {
+		background-position: 0% -10%;
+	}
+  75% {
+		background-position: -5% -5%;
+	}
+  100% {
 		background-position: 0% 0%;
 	}
+
 }
 
-
+.error-wrapper{
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+}
+.error-wrapper>img{
+  width: 100%;
+  height: auto;
+}
+.error-btn{
+  background-color: rgb(135, 36, 165);
+  width: 100%;
+  height: auto;
+  padding-block: 30px;
+  border: var(--information-text);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
 .nav-btn-container{
   display: flex;
   border-top: 4px solid;

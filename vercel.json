@@ -8,5 +8,8 @@
         { "src": "/saturn", "dest": "/" },
         { "src": "/uranus", "dest": "/" },
         { "src": "/neptune", "dest": "/" }
-    ]
+    ],
+    "rewrites":  [
+        {"source": "/(.*)", "destination": "/"}
+      ]
 }

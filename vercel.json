@@ -7,9 +7,7 @@
         { "src": "/jupiter", "dest": "/" },
         { "src": "/saturn", "dest": "/" },
         { "src": "/uranus", "dest": "/" },
-        { "src": "/neptune", "dest": "/" }
-    ],
-    "rewrites":  [
-        {"source": "/(.*)", "destination": "/"}
-      ]
+        { "src": "/neptune", "dest": "/" },
+        { "src": "/(.*)", "dest": "/" }
+    ]
 }

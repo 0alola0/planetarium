@@ -8,6 +8,6 @@
         { "src": "/saturn", "dest": "/" },
         { "src": "/uranus", "dest": "/" },
         { "src": "/neptune", "dest": "/" },
-        { "src": "/(.*)", "dest": "/" }
+        { "src": "/*", "dest": "/" }
     ]
 }
